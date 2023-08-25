@@ -37,23 +37,23 @@ notesRouter.post('/', (req, res) => {
     }
 })
 
-notesRouter.delete('/:id', (req, res) => {
-    console.info(`${req.method} request received to delete a note`);
-    const noteId = req.params.id;
+// notesRouter.delete('/:id', (req, res) => {
+//     console.info(`${req.method} request received to delete a note`);
+//     const noteId = req.params.id;
 
-    if (noteId) {
-        deleteFromFile(noteId, db);
-        res.json(`Note ${noteId} has been deleted`);
+//     if (noteId) {
+//         deleteFromFile(noteId, db);
+//         res.json(`Note ${noteId} has been deleted`);
 
-        const response = {
-            status: 'success',
-            body: noteId,
-        };
-        res.json(response);
+//         const response = {
+//             status: 'success',
+//             body: noteId,
+//         };
+//         res.json(response);
 
-    } else {
-        res.json('Error in deleting note');
-    }
-})
+//     } else {
+//         res.json('Error in deleting note');
+//     }
+// })
 
 module.exports = notesRouter;
